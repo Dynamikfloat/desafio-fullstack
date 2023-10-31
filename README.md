@@ -11,7 +11,7 @@ As APIs precisam expor 3 endpoints:
 
 - `POST /devs` – para criar um recurso de desenvolvedor.
 - `GET /devs/[:id]` – para consultar um recurso criado com a requisição anterior.
-- `GET /devs?t=[:termo da busca]` – para fazer uma busca por desenvolvedores.
+- `GET /devs?terms=[:termo da busca]` – para fazer uma busca por desenvolvedores.
 
 ### Criação de Devs
 
@@ -129,9 +129,9 @@ Note que a resposta é praticamente igual ao payload de criação com o acrésci
 
 ### Busca de Desenvolvedores
 
-`GET /devs?t=[:termo da busca]`
+`GET /devs?terms=[:termo da busca]`
 
-Dado o `termo da busca`, a resposta deverá ser uma lista que satisfaça o termo informado estar contido nos atributos `nickname`, `name`, e/ou elementos de `stack`. A busca não precisa ser paginada e poderá retornar apenas os 50 primeiros registros resultantes da filtragem para facilitar a implementação.
+Dado o `termo da busca`, a resposta deverá ser uma lista que satisfaça o termo informado estar contido nos atributos `nickname`, `name`, e/ou elementos de `stack`. A busca não precisa ser paginada e poderá retornar apenas os 20 primeiros registros resultantes da filtragem para facilitar a implementação.
 
 O status code deverá ser sempre 200 - Ok, mesmo para o caso da busca não retornar resultados (vazio).
 
@@ -156,7 +156,7 @@ Exemplos: Dado os recursos seguintes existentes em sua aplicação:
 ]
 ```
 
-Uma requisição `GET /devs?t=node`, deveria retornar o seguinte:
+Uma requisição `GET /devs?terms=node`, deveria retornar o seguinte:
 
 ```json
 [
@@ -177,7 +177,7 @@ Uma requisição `GET /devs?t=node`, deveria retornar o seguinte:
 ]
 ```
 
-Uma requisição `GET /devs?t=polgar`, deveria retornar o seguinte:
+Uma requisição `GET /devs?terms=polgar`, deveria retornar o seguinte:
 
 ```json
 [
@@ -191,13 +191,13 @@ Uma requisição `GET /devs?t=polgar`, deveria retornar o seguinte:
 ]
 ```
 
-Uma requisição `GET /devs?t=Python`, deveria retornar o seguinte:
+Uma requisição `GET /devs?terms=Python`, deveria retornar o seguinte:
 
 ```json
 []
 ```
 
-Se a query string `t` não for informada, a resposta deve ter seu status code para 400 - bad request com o corpo que quiser. Ou seja, informar `t` é obrigatório.
+Se a query string `terms` não for informada, a resposta deve ter seu status code para 400 - bad request com o corpo que quiser. Ou seja, informar `terms` é obrigatório.
 
 ### Database
 
@@ -227,6 +227,6 @@ Você precisa fazer o seguinte:
 Pontos que iremos avaliar:
 
 - Commits realizados no repositório
-- Organização do projeto. Pastas, classes, componentes e packages
-- Boas práticas como SOLID e Clean Code
+- Organização do projeto. Pastas, classes, componentes e packages utilizadores
+- Boas práticas como Clean Code e SOLID
 - Possíveis otimizações técnicas no backend / base de dados
