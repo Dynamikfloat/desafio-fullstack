@@ -219,14 +219,19 @@ Você precisa fazer o seguinte:
     - Versões das stacks escolhidas.
     - Comandos básicos para ter o sistema a correr do nosso lado.
     - Qualquer outra informação que ache pertinente termos em consideração.
-    - Ter o projeto em [Docker](https://docs.docker.com/) ou em algum serviço publico como o [docker hub](https://hub.docker.com/), por exemplo, será uma mais valia.
 - Enviar para o recrutador com endereço do seu repositório com o teste finalizado.
 
 ### Sobre a Avaliação
 
 Pontos que iremos avaliar:
 
-- Commits realizados no repositório
-- Organização do projeto. Pastas, classes, componentes e packages utilizadores
-- Boas práticas como Clean Code e SOLID
-- Possíveis otimizações técnicas no backend / base de dados
+- Commits realizados no repositório.
+- Organização do projeto: Pastas, classes, componentes, layouts, cores, disposição dos elementos em tela e packages utilizados.
+- Boas práticas como Clean Code e SOLID.
+
+Pontos não obrigatórios, mas que serão valorizados no desafio:
+
+- Ter o projeto em um [Docker](https://docs.docker.com/) ou em algum serviço publico como o [docker hub](https://hub.docker.com/), por exemplo.
+- Possíveis otimizações técnicas no backend / base de dados.
+- Testes unitários no backend e frontend, dos pontos que entender serem os mais relevantes.
+- Testes automatizados end-to-end. Pode usar o Cypress, por exemplo.
