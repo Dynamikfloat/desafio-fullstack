@@ -226,7 +226,9 @@ Você precisa fazer o seguinte:
 Pontos que iremos avaliar:
 
 - Commits realizados no repositório.
-- Organização do projeto: Pastas, classes, componentes, layouts, cores, disposição dos elementos em tela e packages utilizados.
+- Organização do projeto: Pastas, ficheiros, classes e componentes.
+- Layout: Cores, disposição dos elementos em tela e UI/UX.
+- Bibliotecas auxiliares para a construção do aplicativo.
 - Boas práticas como Clean Code e SOLID.
 
 Pontos não obrigatórios, mas que serão valorizados no desafio:
