@@ -1,4 +1,4 @@
-# Instruções e Regras para Desafio Fullstack Dynamik - Edição 2023
+# Instruções e Regras para Desafio Fullstack Dynamik
 
 ## Resumo
 
