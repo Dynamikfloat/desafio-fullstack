@@ -10,6 +10,7 @@
 As APIs precisam expor 3 endpoints:
 
 - `POST /devs` – para criar um recurso de desenvolvedor.
+- `GET /devs` – para consultar uma lista de desenvolvedores.
 - `GET /devs/[:id]` – para consultar um recurso criado com a requisição anterior.
 - `GET /devs?terms=[:termo da busca]` – para fazer uma busca por desenvolvedores.
 
@@ -97,6 +98,42 @@ Para o caso de requisições sintaticamente inválidas, a resposta deverá ter o
   "birth_date": "1985-01-01",
   "stack": [1, "PHP"] // stack deve ser um array de apenas strings
 }
+```
+
+### Lista de Desenvolvedores
+
+`GET /devs`
+Deverá retornar uma lista de desenvolvedores e poderá retornar apenas os 20 primeiros registros para facilitar a implementação.
+
+O `header` de resposta deve conter o número total de registos na base de dados. 
+
+O status code deverá ser sempre 200 - Ok, mesmo para o caso da listagem não retornar resultados (vazio).
+
+Exemplos: Listagem com recursos existentes em sua aplicação:
+
+```json
+[
+  {
+    "id": "f7379ae8-8f9b-4cd5-8221-51efe19e721b",
+    "nickname": "judit",
+    "name": "Judit Polgár",
+    "birth_date": "1976-07-23",
+    "stack": ["C#", "Node", "Oracle"]
+  },
+  {
+    "id": "5ce4668c-4710-4cfb-ae5f-38988d6d49cb",
+    "nickname": "leo",
+    "name": "Leonardo Barreto",
+    "birth_date": "1986-09-05",
+    "stack": null
+  }
+]
+```
+
+Listagem sem recursos existentes em sua aplicação:
+
+```json
+[]
 ```
 
 ### Detalhe de um Desenvolvedor
@@ -201,7 +238,7 @@ Se a query string `terms` não for informada, a resposta deve ter seu status cod
 
 ### Database
 
-- Como já mencionado no início do documento, você poderá optar por usar qualquer base de dados. Fica a seu critério.
+- Como já mencionado no início do documento, você poderá optar por usar qualquer base de dados relacional (SQL). Fica a seu critério.
 - A criação da base de dados e otimizações são mais que incentivados para o sistema ter performance.
 
 ### Frontend
