@@ -7,7 +7,7 @@
 
 ## Endpoints
 
-As APIs precisam expor 3 endpoints:
+A API precisa expor 4 endpoints:
 
 - `POST /devs` – para criar um recurso de desenvolvedor.
 - `GET /devs` – para consultar uma lista de desenvolvedores.
